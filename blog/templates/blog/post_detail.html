@@ -53,4 +53,10 @@
 {% empty %}
 <p>No comments here yet :(</p>
 {% endfor %}
+
+{% if post.published_date %}
+<div class="comment-actions">
+    <a class="btn btn-primary" href="{% url 'add_comment_to_post' pk=post.pk %}">Add a comment</a>
+</div>
+{% endif %}
 {% endblock %}
